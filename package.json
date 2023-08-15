@@ -1,0 +1,12 @@
+{
+  "name": "michaelwatts.me-website",
+  "version": "1.0.0",
+  "description": "Website of Michael Watts",
+  "main": "index.js",
+  "author": "Michael Watts",
+  "license": "GNU",
+  "scripts": {
+    "dev": "./script_serve.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
