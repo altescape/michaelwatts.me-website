@@ -30,6 +30,7 @@
                     {{ end }}
                 {{ end }}
             {{ end }}
+
             {{ range $name, $taxonomy := $taxonomies }}
                 {{ if eq (lower $name) (lower $menu_item.Name) }}
                     <li class="heading">
