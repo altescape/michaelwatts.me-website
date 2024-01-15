@@ -13,9 +13,9 @@ wip: true
 
 I'm looking to expand my knowledge of web accessibility and share my findings with other developers.
 
-Although I've been involved in website and app development for quite some time, it's only recently that I've started to appreciate the importance of addressing the difficulties faced by people with disabilities. While I had previously come across accessibility standards and guidelines, I'm now beginning to genuinely understand their significance.
+Although I've been involved in website and app development for quite some time, it's only recently that I've started to appreciate the importance of addressing the difficulties faced by people with disabilities. While I had previously come across accessibility standards and guidelines, I'm now beginning to genuinely understand how important it is for people with disabilities.
 
-Look at this:
+## Here's an eye-opening statistic
 
 > At least 1 in 5 people in the UK have a long term illness, impairment or disability. Many more have a temporary disability.
 >
@@ -23,17 +23,14 @@ Look at this:
 
 There are [16 million people in the UK](https://www.scope.org.uk/media/disability-facts-figures/) who have a long term disability, many more with a temporary disability. Any one of us, at any given time, could encounter an injury resulting in some form of disability, whether it's related to mobility, hearing, vision, or any other potential impairment.
 
-A significant community relies on accessible websites and apps. I invite you to join me in a commitment to create accessible digital experiences for all! (If you aren't already doing so. 😊)
+## Navigating web pages with a screen reader
 
-## Screen reader at the ready, let's get testing
-
-So, with that in mind let's arm ourselves with a screen reader and navigate the web to see what we can learn.
-
-If you're on windows you can grab a free copy of NVDA - there are various useful ways and shortcuts to navigate a website ([see here for a full list](https://webaim.org/resources/shortcuts/nvda)).
+Testing pages with a screen reader is relatively easy if you're on windows you can grab a copy of NVDA which is free.
+NVDA documentation provides a list of shortcuts to navigate a website ([see here for a full list](https://webaim.org/resources/shortcuts/nvda)).
 
 ### Navigating pages
 
-If you've never used a screen reader and keyboard to navigate a web page, the feedback of information can, at first, be overwhelming. It's a bit like being hit in the eyes with one of those busy old websites from the 90s, with flashing gifs, tickers, rainbows, etc. There is too much noise. They provide too much information to do their job effectively.
+If you have not used a screen reader to navigate a web page, the amount of information fed back to you can be overwhelming. It can be a bit like visiting one of those busy old websites from the 90s, with flashing gifs, tickers, rainbows, etc. There is too much noise.
 
 One thing I've learned is the need for manually testing components with a screen reader during development. In the context of delivering information concisely to the user, the main objective is to provide an experience that is both minimalistic and tranquil so that the user does not feel overwhelmed, does not waste time and gets the information they are looking for. It's worth noting that automated methods such as UI or unit testing were less effective in attaining this goal. I'm not yet aware of any automated testing software that help in this regard.
 
