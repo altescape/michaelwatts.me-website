@@ -84,12 +84,18 @@ const title = 'Michael Watts';
 .main-nav ul li a {
   text-decoration: none;
   color: inherit;
+  transition: color 0.1s ease;
 }
 
 .main-nav .logo.title:hover,
 .main-nav ul li a:hover {
   text-decoration: underline;
   color: inherit;
+}
+
+.main-nav .logo.title:hover {
+  text-decoration: none;
+  color: rgb(from white r g b / 0.8);
 }
 </style>
 
