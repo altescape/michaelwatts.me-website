@@ -1,7 +1,13 @@
 ---
 const { url, title, date } = Astro.props;
 
-const formattedDate = date ? new Date(date).toLocaleDateString('en-gb', { year:"numeric", month:"short", day:"numeric"}) : null;
+const formattedDate = date
+  ? new Date(date).toLocaleDateString("en-gb", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })
+  : null;
 ---
 
 <style>

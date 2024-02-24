@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "michaelwatts.me",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,7 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/rss": "^2.4.4",
-    "astro": "^2.10.12"
+    "@astrojs/mdx": "^2.1.1",
+    "@astrojs/rss": "^4.0.5",
+    "astro": "^4.4.4"
   }
 }

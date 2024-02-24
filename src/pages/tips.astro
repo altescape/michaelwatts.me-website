@@ -1,12 +1,16 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import BlogPost from '../components/BlogPost.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
 
-const pageTitle = 'Tips, tricks, and tutorials for web developers.';
-const allPosts = await Astro.glob('../pages/posts/*.md');
+const pageTitle = "Tips, tricks, and tutorials for web developers.";
+const allPosts = await Astro.glob("../pages/posts/*.md*");
 const publishedPosts = allPosts
   .filter((post) => post.frontmatter.draft !== true)
-  .sort((a, b) => (new Date(b.frontmatter.pubDate) as any) - (new Date(a.frontmatter.pubDate) as any));
+  .sort(
+    (a, b) =>
+      (new Date(b.frontmatter.pubDate) as any) -
+      (new Date(a.frontmatter.pubDate) as any)
+  );
 ---
 
 <style>
@@ -19,8 +23,14 @@ const publishedPosts = allPosts
 <BaseLayout pageTitle={pageTitle}>
   <h1>Tips</h1>
   <ul>
-    {publishedPosts.map((post) => (
-      <BlogPost url={post.url} title={post.frontmatter.title} date={post.frontmatter.pubDate} />
-    ))}
+    {
+      publishedPosts.map((post) => (
+        <BlogPost
+          url={post.url}
+          title={post.frontmatter.title}
+          date={post.frontmatter.pubDate}
+        />
+      ))
+    }
   </ul>
 </BaseLayout>
