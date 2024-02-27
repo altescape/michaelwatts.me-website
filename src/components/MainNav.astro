@@ -14,7 +14,6 @@ const currentPath = pathname.slice(1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
   }
 
   .main-nav .logo {
@@ -114,7 +113,14 @@ const currentPath = pathname.slice(1);
   <a href="#main" class="sr-only">Skip to main content</a>
 
   <ul role="navigation">
-    <li class={currentPath === "tips" ? "active" : ""}>
+    <li class={currentPath === "" ? "active" : ""}>
+      <a href="/">Home</a>
+    </li>
+    <li
+      class={currentPath === "tips" || currentPath.includes("posts")
+        ? "active"
+        : ""}
+    >
       <a href="/tips">Tips</a>
     </li>
     <li><a href="/rss.xml">RSS</a></li>

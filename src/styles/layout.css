@@ -1,0 +1,47 @@
+body {
+  display: grid;
+}
+
+.main-nav {
+  height: 8vh;
+  padding: 1rem;
+  border-bottom: var(--border);
+  box-sizing: border-box;
+  background-color: hsl(from var(--background-color) h s calc(l * 0.55));
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "sidebar main";
+  height: 92vh;
+}
+
+.main {
+  min-height: 80vh;
+}
+
+.padded {
+  padding: 0 2rem;
+}
+
+.sidebar {
+  padding: 1rem;
+  border-right: var(--border);
+  background-color: hsl(from var(--background-color) h s calc(l * 0.55));
+}
+
+footer {
+  height: 12vh;
+  padding: 2rem;
+  background-color: var(--background-color-light-1);
+}
+
+.container {
+  padding: 0 1rem;
+  max-width: 80ch;
+  margin: 0 auto;
+}
+
