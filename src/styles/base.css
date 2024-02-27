@@ -4,7 +4,19 @@ html {
   font-family: var(--font-body);
   font-weight: var(--font-body-regular-weight);
   line-height: 1.6;
-  font-size: 18px;
+  font-size: 12px;
+}
+
+@media only screen and (min-width: 700px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1087px) {
+  html {
+    font-size: 18px;
+  }
 }
 
 body {

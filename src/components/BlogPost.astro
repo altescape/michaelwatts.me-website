@@ -13,8 +13,16 @@ const formattedDate = date
 <style>
   li {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    flex-direction: column;
+    border-bottom: 4px dashed var(--background-color-light-1);
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   a {
@@ -24,6 +32,18 @@ const formattedDate = date
 
   small {
     flex-shrink: 0;
+  }
+
+  @media only screen and (min-width: 1372px) {
+    li {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    small {
+      padding-left: 1rem;
+    }
   }
 </style>
 

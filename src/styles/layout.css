@@ -11,12 +11,7 @@ body {
 }
 
 .wrapper {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas: "sidebar main";
-  height: 92vh;
+  display: flex;
 }
 
 .main {
@@ -34,7 +29,7 @@ body {
 }
 
 footer {
-  height: 12vh;
+  min-height: 12vh;
   padding: 2rem;
   background-color: var(--background-color-light-1);
 }
@@ -43,5 +38,16 @@ footer {
   padding: 0 1rem;
   max-width: 80ch;
   margin: 0 auto;
+}
+
+@media only screen and (min-width: 1087px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "sidebar main";
+    height: 92vh;
+  }
 }
 
