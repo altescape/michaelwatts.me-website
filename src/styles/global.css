@@ -1,5 +1,14 @@
 :root {
-  --primary-color: #50b9ff;
+  --mw-brand: #646cff;
+  --mw-brand-light: #747bff;
+  --mw-brand-lighter: #9499ff;
+  --mw-brand-lightest: #bcc0ff;
+  --mw-brand-dark: #535bf2;
+  --mw-brand-darker: #454ce1;
+  --mw-brand-darkest: #3a43d9;
+  --mw-brand-dimm: rgba(100, 108, 255, .08);
+
+  --primary-color: var(--mw-brand);
   --primary-color-rgb: 80, 185, 255;
   --secondary-color: #c184ff;
   --secondary-color-rgb: 193, 132, 255;
@@ -26,16 +35,13 @@
   --black-color: #000;
   --black-color-rgb: 0, 0, 0;
 
-  --link-color: var(--primary-color);
-  --link-color-rgb: var(--primary-color-rgb);
-  --link-color-hover: #93d4ff;
-  --link-color-hover-rgb: 147, 212, 255;
+  --link-color: var(--mw-brand-lighter);
+  --link-color-hover: var(--mw-brand-lightest);
   --link-color-visited: var(--secondary-color);
-  --link-color-visited-rgb: var(--secondary-color-rgb);
   --link-color-visited-hover: #d1a3ff;
   --link-color-visited-hover-rgb: 209, 163, 255;
 
-  --background-color: #12273b;
+  --background-color: #161618;
   --background-color-rgb: 18, 39, 59;
   --background-color-light-1: oklch(from var(--background-color) calc(l * 1.25) c h);
   --background-color-light-2: oklch(from var(--background-color) calc(l * 3) c h);
@@ -66,6 +72,27 @@ body {
 * {
   box-sizing: border-box;
 }
+
+::selection {
+  background: var(--mw-brand-darkest);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: hsl(from var(--background-color) h s calc(l * 1.35));
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--mw-brand-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--mw-brand-darker);
+}
+
 
 a {
   color: var(--link-color);

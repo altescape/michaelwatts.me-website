@@ -41,7 +41,7 @@ class CodeInput extends HTMLElement {
           outline: none;
           padding: 0;
           letter-spacing: 2ch;
-          color: PaleGoldenrod;
+          color: var(--mw-brand);
           background: transparent;
           width: 18ch;
           user-select: none;
@@ -50,13 +50,13 @@ class CodeInput extends HTMLElement {
         }
         .code-input:focus {
           opacity: 1;
-          color: PaleGoldenrod;
+          color: var(--mw-brand-lighter);
         }
         .code-input::selection {
           background-color: transparent;
         }
         .cell {
-          outline: 2px solid Gold;
+          outline: 2px solid var(--mw-brand);
           width: 2ch;
           height: 3ch;
           z-index: -1;
