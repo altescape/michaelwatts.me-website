@@ -35,9 +35,7 @@ footer {
 }
 
 .container {
-  padding: 0 1rem;
-  max-width: 80ch;
-  margin: 0 auto;
+  max-width: 100ch;
 }
 
 @media only screen and (min-width: 1087px) {

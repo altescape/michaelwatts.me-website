@@ -98,8 +98,18 @@ blockquote {
 
 code {
   font-size: 0.85rem;
-  background-color: var(--background-color-dark-1);
-  box-shadow: 0 0 0 0.1rem var(--background-color-dark-1);
+  background-color: var(--background-color-dark-2);
+  box-shadow: 0 0 0 0.05rem var(--background-color-dark-2);
+  color: rgb(from var(--white-color) r g b / 0.75);
+  white-space: nowrap;
+}
+
+hr {
+  margin: 4rem auto;
+  border-color: var(--background-color-light-1);
+  border-style: dashed;
+  border-width: 2px;
+  width: 50%;
 }
 
 .notification {
@@ -126,4 +136,5 @@ pre.astro-code {
 pre.astro-code code {
   background-color: transparent;
   box-shadow: none;
+  white-space: pre-wrap;
 }

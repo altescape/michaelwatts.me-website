@@ -42,12 +42,7 @@ If we replace the variable `var(--brand-color)` with `blue` it will make it clea
 
 ## Running example
 
-<p class="codepen" data-height="600" data-theme-id="dark" data-default-tab="result" data-slug-hash="bGZzKvo" data-user="altescape" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/altescape/pen/bGZzKvo">
-  CSS relative colour syntax</a> by Michael Watts (<a href="https://codepen.io/altescape">@altescape</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<relative-color-syntax-example></relative-color-syntax-example>
 
 ## Example 2: Changing opacity
 

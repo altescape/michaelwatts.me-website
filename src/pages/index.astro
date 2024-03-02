@@ -1,45 +1,37 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import PersonalSummary from '../components/PersonalSummary.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PersonalSummary from "../components/PersonalSummary.astro";
 
-const pageTitle = 'About';
-const languages = [
-  'TypeScript',
-  'C#',
-  'Ruby',
-]
-
-const skillColor = "white";
+const pageTitle = "About";
+const languages = ["TypeScript", "C#", "Ruby"];
 ---
-
-<style define:vars={{skillColor}}>
-.skill {
-  color: var(--skillColor);
-}
-</style>
 
 <BaseLayout pageTitle={pageTitle}>
   <PersonalSummary />
 
   <h2>Experience</h2>
   <p>
-    I'm currently working in the financial sector, working with TypeScript and C#.
+    I'm currently working in the financial sector, working with TypeScript and
+    C#.
   </p>
 
   <p>
-    Previously I worked on a startup called, IO Music, an Apple/Android music App built with React Native.
-    I've also worked at marketing, design and web agencies building and designing many types of websites,
-    web apps, e-commerce and social media apps on a wide variety of platforms.
+    Previously I worked on a startup called, IO Music, an Apple/Android music
+    App built with React Native. I've also worked at marketing, design and web
+    agencies building and designing many types of websites, web apps, e-commerce
+    and social media apps on a wide variety of platforms.
   </p>
-
-  <div>
-    <div>
-      <h3>Languages</h3>
-      <ul>
-        {languages.map((language) => (
-          <li>{language}</li>
-        ))}
-      </ul>
-    </div>
-  </div>
+  <p>
+    And prior to that I was a graphic designer working for a wide range of
+    clients including Porsche and Toyota F1.
+  </p>
 </BaseLayout>
+
+<div>
+  <div>
+    <h3>Languages</h3>
+    <ul>
+      {languages.map((language) => <li>{language}</li>)}
+    </ul>
+  </div>
+</div>

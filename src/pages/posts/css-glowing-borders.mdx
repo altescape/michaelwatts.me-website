@@ -11,14 +11,11 @@ tags: ["html", "css"]
 wip: false
 ---
 
+import GlowingButtonExampleForPost from "../../components/GlowingButtonExampleForPost.astro";
+
 ## Working example
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="result" data-slug-hash="qBvPKKm" data-user="altescape" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/altescape/pen/qBvPKKm">
-  Glowing button on hover</a> by Michael Watts (<a href="https://codepen.io/altescape">@altescape</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<GlowingButtonExampleForPost />
 
 ## HTML
 
@@ -30,23 +27,59 @@ wip: false
 </main>
 ```
 
-## SCSS
+## CSS breakdown
 
-```scss
-@font-face {
-  font-family: "Mona Sans";
-  src: url("https://assets.codepen.io/64/Mona-Sans.woff2") format("woff2 supports variations"),
-    url("https://assets.codepen.io/64/Mona-Sans.woff2") format("woff2-variations");
-  font-weight: 100 1000;
+### The `@property` rule
+
+The `@property` rule is part of a set of low-level APIs labeled [Houdini](https://developer.mozilla.org/en-US/docs/Web/API/Houdini_APIs).
+Houdini exposes parts of the CSS engine, allowing us to develop new CSS features.
+The `@property` itself lets us explicitly define our [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) like `--text-color` that can be used in CSS.
+With `@property`, we can define the syntax (type checking and constraining), set initial values, and define whether a custom property can inherit values or not.
+
+#### `@property` definition:
+
+```css
+@property --property-name {
+  syntax: "<type>";
+  inherits: true | false;
+  initial-value: <value>;
 }
+```
 
-html,
-body {
-  width: 100%;
-  padding: 0;
-  margin: 0;
+Syntax type can be any of the following:
+
+- `<color>`
+- `<image>`
+- `<number>`
+- `<percentage>`
+- `<length>`
+- `<number>`
+- `<angle>`
+- [and more...](https://developer.mozilla.org/en-US/docs/Web/CSS/@property/syntax)
+
+#### `@property` usage example:
+
+```css
+@property --radial-bg-color {
+  syntax: "<>";>";
+  inherits: true;
+  initial-value: black;
 }
+```
 
+So for an example in the CSS below, we have defined a set of custom properties using the `@property` rule.
+One of those is the `--radial-bg-color` custom property, which updates our radial gradient color.
+
+Here `--radial-bg-color` is initially set to `black` but more crucially it can inherit values further down the chain.
+In our animation the `--radial-bg-color` property is animated from `hsl(290deg 100% 100%)` to `var(--accent-color)` to `var(--dark-color)` by assigning new values to it.
+
+If `--radial-bg-color` hadn't been defined in the first place as a custom property, the animation wouldn't work as expected.
+
+---
+
+## The whole CSS
+
+```css
 @layer properties {
   @property --bg-x {
     syntax: "<number>";
@@ -100,7 +133,7 @@ body {
   }
 }
 
-:root {
+.btn {
   --background-color: hsl(270deg 92% 5%);
   --dark-color: hsl(270deg 92% 2%);
   --dark-color-hover: hsl(270deg 92% 12%);
@@ -124,22 +157,6 @@ body {
   );
 }
 
-body {
-  background: var(--background-color);
-  font-family: "Mona sans", sans-serif;
-}
-
-main {
-  max-width: 800px;
-  margin: 6em auto 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 32px;
-  place-items: center;
-  align-items: start;
-}
-
 .btn {
   font-family: "Mona sans", sans-serif;
   font-size: 1.1rem;
@@ -159,31 +176,30 @@ main {
   z-index: 1;
   box-shadow: 0 0 calc(var(--flash-size) * 1px) var(--flash-color);
   text-shadow: 0 0 calc(var(--text-flash-size) * 1px) var(--text-flash-color);
+}
 
-  &:before {
-    --padding: calc(var(--glow-size) * 1px);
-    content: "";
-    display: block;
-    position: absolute;
-    width: calc(100% - var(--padding));
-    height: calc(100% - var(--padding));
-    top: calc(var(--padding) / 2);
-    left: calc(var(--padding) / 2);
-    background: var(--dark-color);
-    border-radius: var(--outer-radius);
-    transition: background-color 0.8s ease;
-    z-index: -1;
-  }
+.btn:before {
+  --padding: calc(var(--glow-size) * 1px);
+  content: "";
+  display: block;
+  position: absolute;
+  width: calc(100% - var(--padding));
+  height: calc(100% - var(--padding));
+  top: calc(var(--padding) / 2);
+  left: calc(var(--padding) / 2);
+  background: var(--dark-color);
+  border-radius: var(--outer-radius);
+  transition: background-color 0.8s ease;
+  z-index: -1;
+}
 
-  &:hover {
-    animation: glow 0.8s ease-in-out, flash 0.3s ease-out,
-      text-flash 0.2 ease-out;
-    cursor: pointer;
+.btn:hover {
+  animation: glow 0.8s ease-in-out, flash 0.3s ease-out, text-flash 0.2 ease-out;
+  cursor: pointer;
+}
 
-    &:before {
-      background: var(--dark-color-hover);
-    }
-  }
+.btn:hover:before {
+  background: var(--dark-color-hover);
 }
 
 @keyframes glow {
