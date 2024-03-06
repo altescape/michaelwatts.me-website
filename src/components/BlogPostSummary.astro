@@ -10,48 +10,14 @@ const formattedDate = date
   : null;
 ---
 
-<style>
-  a {
-    text-decoration: none;
-    display: block;
-    padding: 1rem;
-    background-color: hsl(from var(--background-color) h s calc(l * 1.2));
-    margin-bottom: 1rem;
-    transition: background-color 0.2s ease-in-out;
-  }
-
-  a:hover {
-    background-color: hsl(from var(--background-color) h s calc(l / 1.1));
-  }
-
-  a:hover h2 {
-    text-decoration: underline;
-  }
-
-  article {
-    display: flex;
-    flex-direction: column;
-  }
-
-  h2 {
-    margin: 0;
-    font-size: 1.5rem;
-  }
-
-  p {
-    margin: 0;
-    color: var(--light-color);
-  }
-
-  small {
-    color: rgb(from var(--light-color) r g b / 0.5);
-  }
-</style>
-
-<a href={url}>
-  <article>
-    <h2>{title}</h2>
-    <small>{formattedDate}</small>
-    <p>{description}</p>
+<a
+  href={url}
+  class="group hover:no-underline block p-5 mb-5 transition-colors mw-bg-2 hover:bg-secondary-200 dark:hover:bg-secondary-800"
+>
+  <article class="flex flex-col">
+    <h2 class="m-0 text-2xl group-hover:underline">{title}</h2>
+    <small class="text-secondary-600 dark:text-brand-300">{formattedDate}</small
+    >
+    <p class="m-0 text-secondary-700 dark:text-brand-200">{description}</p>
   </article>
 </a>

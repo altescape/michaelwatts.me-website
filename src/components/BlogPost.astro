@@ -10,44 +10,9 @@ const formattedDate = date
   : null;
 ---
 
-<style>
-  li {
-    display: flex;
-    flex-direction: column;
-    border-bottom: 4px dashed var(--background-color-light-1);
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  li:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  a {
-    display: block;
-    width: 100%;
-  }
-
-  small {
-    flex-shrink: 0;
-  }
-
-  @media only screen and (min-width: 1372px) {
-    li {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-
-    small {
-      padding-left: 1rem;
-    }
-  }
-</style>
-
-<li>
-  <a href={url}>{title}</a>
-  <small>{formattedDate}</small>
+<li
+  class="flex flex-col mw-border-b pb-5 mb-5 last:border-none last:mb-0 last:pb-0 xl:flex-row xl:justify-between xl:items-baseline"
+>
+  <a href={url} class="block w-full hover:underline">{title}</a>
+  <time class="shrink text-xs text-nowrap xl:pl-5">{formattedDate}</time>
 </li>

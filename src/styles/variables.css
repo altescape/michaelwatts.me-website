@@ -48,8 +48,8 @@
   --background-color-dark-1: oklch(from var(--background-color) calc(l * 0.75) c h);
   --background-color-dark-2: oklch(from var(--background-color) calc(l * 0.5) c h);
 
-  --font-header: 'ivypresto-headline', sans-serif;
-  --font-body: 'proxima-nova', serif;
+  --font-header: 'ivypresto-headline', serif;
+  --font-body: 'proxima-nova', sans-serif;
   --font-body-regular-weight: 400;
   --font-body-bold-weight: 700;
 

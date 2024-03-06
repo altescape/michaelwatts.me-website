@@ -1,4 +1,101 @@
-@import url(./variables.css);
-@import url(./base.css);
-@import url(./layout.css);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::selection {
+    @apply bg-brand-900 dark:bg-brand-100;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-brand-200 dark:bg-brand-950;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-600 dark:bg-brand-900;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-700 dark:bg-brand-800;
+  }
+
+  h1 {
+    @apply text-4xl mb-10 font-serif text-balance italic text-brand-700 dark:text-brand-400;
+  }
+
+  h2,h3,h4,h5,h6 {
+    @apply text-brand-700 dark:text-brand-400 text-3xl font-bold mt-5 mb-3;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  h5 {
+    @apply text-lg;
+  }
+
+  h6 {
+    @apply text-base font-bold;
+  }
+
+  p {
+    @apply mb-5;
+  }
+
+  a {
+    @apply text-brand-700 dark:text-brand-400 transition-colors hover:text-brand-800 hover:dark:text-brand-200 hover:underline;
+  }
+
+  blockquote {
+    @apply p-5 mb-5 bg-gradient-to-r from-brand-900 dark:from-brand-950 to-transparent border-l-4 border-brand-400 dark:border-brand-200 text-brand-50 dark:text-brand-200;
+  }
+
+  pre {
+    @apply p-5 rounded-sm mb-5;
+  }
+
+  hr {
+    @apply my-16 border-dashed border-t-2 border-brand-400 dark:border-brand-200;
+  }
+
+  .content ol {
+    @apply list-decimal list-inside;
+  }
+
+  .notification {
+    @apply p-4 border-l-4;
+  }
+
+  .notification.warning {
+    @apply bg-gradient-to-r from-yellow-700 to-transparent border-yellow-400 text-yellow-200;
+  }
+
+  .mw-border-b,
+  .mw-border-r,
+  .mw-border-t {
+    @apply border-dashed border-secondary-200 dark:border-secondary-700;
+  }
+  .mw-border-b {
+    @apply border-b-4;
+  }
+  .mw-border-r {
+    @apply border-r-4;
+  }
+  .mw-border-t {
+    @apply border-t-4;
+  }
+
+  .mw-bg-2 {
+    @apply bg-secondary-100 dark:bg-secondary-900;
+  }
+}
 

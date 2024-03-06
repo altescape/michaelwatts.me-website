@@ -11,16 +11,8 @@ const publishedPosts = allPosts
   );
 ---
 
-<style>
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-</style>
-
-<aside class="sidebar">
-  <ul>
+<aside class="p-5 mw-border-r mw-bg-2">
+  <ul class="list-none p-0 m-0">
     {
       publishedPosts.map((post) => (
         <BlogPost
