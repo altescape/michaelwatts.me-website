@@ -12,12 +12,23 @@ const formattedDate = date
 
 <a
   href={url}
-  class="group hover:no-underline block p-5 mb-5 transition-colors mw-bg-2 hover:bg-secondary-200 dark:hover:bg-secondary-800"
+  class="group hover:no-underline block p-5 mb-1 transition-colors mw-bg-2 hover:bg-secondary-200 dark:hover:bg-secondary-800 rounded-sm"
 >
   <article class="flex flex-col">
-    <h2 class="m-0 text-2xl group-hover:underline">{title}</h2>
-    <small class="text-secondary-600 dark:text-brand-300">{formattedDate}</small
-    >
-    <p class="m-0 text-secondary-700 dark:text-brand-200">{description}</p>
+    <div class="flex justify-between items-baseline mb-2">
+      <h2
+        class="transition-colors m-0 text-2xl group-hover:underline group-hover:dark:text-brand-400"
+      >
+        {title}
+      </h2>
+      <time
+        class="text-secondary-600 dark:text-secondary-200 text-sm group-hover:underline group-hover:dark:text-brand-400"
+      >
+        {formattedDate}
+      </time>
+    </div>
+    <p class="m-0 text-secondary-700 dark:text-secondary-200">
+      {description}
+    </p>
   </article>
 </a>

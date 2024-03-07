@@ -2,7 +2,7 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: "Code input web component"
 pubDate: 2024-01-15
-description: "Building a simple code input like PayPal"
+description: "PIN or code input boxes (like you see when logging into PayPal, etc.), a way of doing it with a single input but appears to have 6 separate inputs"
 author: "Michael Watts"
 image:
   url: "https://docs.astro.build/assets/full-logo-light.png"

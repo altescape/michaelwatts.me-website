@@ -2,7 +2,7 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: "CSS relative colour syntax"
 pubDate: 2024-02-16
-description: "Creating new colours based on another colour's channels and values."
+description: "Exploring new proposal for adapting colours based on another colour's channels and values"
 author: "Michael Watts"
 image:
   url: "https://docs.astro.build/assets/full-logo-light.png"
