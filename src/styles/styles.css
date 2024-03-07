@@ -4,7 +4,7 @@
 
 @layer base {
   ::selection {
-    @apply bg-brand-900 dark:bg-brand-100;
+    @apply bg-teal-100 dark:bg-teal-950;
   }
 
   ::-webkit-scrollbar {
@@ -12,23 +12,27 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-brand-200 dark:bg-brand-950;
+    @apply bg-secondary-200 dark:bg-secondary-900;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-brand-600 dark:bg-brand-900;
+    @apply bg-secondary-400 dark:bg-secondary-700;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-brand-700 dark:bg-brand-800;
+    @apply bg-brand-400 dark:bg-brand-700;
   }
 
   h1 {
-    @apply text-4xl mb-10 font-serif text-balance italic text-brand-700 dark:text-brand-400;
+    @apply text-4xl mb-10 font-serif text-balance italic text-secondary-950 dark:text-secondary-300;
   }
 
   h2,h3,h4,h5,h6 {
-    @apply text-brand-700 dark:text-brand-400 text-3xl font-bold mt-5 mb-3;
+    @apply text-secondary-950 dark:text-secondary-400 text-3xl font-bold mt-5 mb-3;
+  }
+
+  h2 {
+    @apply text-secondary-800 dark:text-secondary-300;
   }
 
   h3 {
@@ -48,27 +52,44 @@
   }
 
   p {
-    @apply mb-5;
+    @apply mb-3;
   }
 
   a {
-    @apply text-brand-700 dark:text-brand-400 transition-colors hover:text-brand-800 hover:dark:text-brand-200 hover:underline;
+    @apply text-brand-800 dark:text-brand-200 transition-colors hover:text-brand-700 hover:dark:text-brand-400 hover:underline;
   }
 
   blockquote {
-    @apply p-5 mb-5 bg-gradient-to-r from-brand-900 dark:from-brand-950 to-transparent border-l-4 border-brand-400 dark:border-brand-200 text-brand-50 dark:text-brand-200;
+    @apply p-10 mb-5 bg-gradient-to-r from-secondary-100 dark:from-secondary-900 to-transparent border-l-4 border-secondary-300 dark:border-secondary-600 text-secondary-950 dark:text-secondary-200;
   }
 
   pre {
     @apply p-5 rounded-sm mb-5;
   }
 
+  code {
+    @apply text-sm bg-secondary-200 dark:bg-secondary-900 p-0.5 rounded-sm;
+  }
+
+  pre code {
+    @apply p-0 bg-transparent;
+  }
+
   hr {
-    @apply my-16 border-dashed border-t-2 border-brand-400 dark:border-brand-200;
+    @apply my-10 mw-border-t border-secondary-100 dark:border-secondary-900;
+  }
+
+  .content > ol,
+  .content > ul {
+    @apply mb-5;
   }
 
   .content ol {
-    @apply list-decimal list-inside;
+    @apply list-decimal list-inside ml-5;
+  }
+
+  .content ul {
+    @apply list-disc list-inside ml-5;
   }
 
   .notification {

@@ -38,13 +38,15 @@ class RelativeColorSyntaxExample extends HTMLElement {
         }
 
         h1, h2 {
-          color: var(--brand-color);
+          color: hsl(from var(--brand-color) h s calc(l * 1.5));
           mix-blend-mode: screen;
         }
 
         code {
-          color: var(--brand-color);
+          color: hsl(from var(--brand-color) h s calc(l * 0.65));
           mix-blend-mode: multiply;
+          font-weight: bold;
+          font-size: 0.9rem;
         }
 
         .bg-lighten-1 {

@@ -26,10 +26,10 @@ const { pageTitle } = Astro.props;
   <body class="grid">
     <MainNav />
 
-    <section class="flex">
+    <section class="md:grid md:grid-cols-5 md:grid-rows-1 md:gap-0">
       <Sidebar />
 
-      <div class="w-full">
+      <div class="w-full md:col-span-4">
         <div id="main" role="main" class="min-h-lvh max-w-6xl">
           <div class="content p-12 w-full">
             <slot />
