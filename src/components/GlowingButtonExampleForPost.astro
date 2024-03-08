@@ -81,22 +81,14 @@
   }
 
   .btn {
-    font-family: "Mona sans", sans-serif;
-    font-size: 1.1rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: white;
-    border: none;
+    @apply tracking-wide text-white border-none relative w-48 p-5;
     background: var(--dark-color)
       radial-gradient(
         ellipse 70% 70% at calc(var(--bg-x) * 1%) calc(var(--bg-y) * 1%),
         var(--radial-bg-color) 0%,
         var(--dark-color) 100%
       );
-    padding: var(--inner-padding);
     border-radius: var(--outer-radius);
-    position: relative;
-    width: 200px;
     z-index: 1;
     box-shadow: 0 0 calc(var(--flash-size) * 1px) var(--flash-color);
     text-shadow: 0 0 calc(var(--text-flash-size) * 1px) var(--text-flash-color);
@@ -171,8 +163,8 @@
   }
 </style>
 
-<main class="bg-secondary-800 p-3 dark:bg-transparent dark:p-0 dark:py-3">
+<div
+  class="bg-secondary-800 p-3 dark:bg-transparent dark:p-0 dark:py-3 rounded-sm"
+>
   <button class="btn">Button 1</button>
-  <button class="btn">Button 2</button>
-  <button class="btn">Button 3</button>
-</main>
+</div>

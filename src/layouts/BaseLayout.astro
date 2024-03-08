@@ -15,7 +15,7 @@ const { pageTitle } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{mainTitle} | {pageTitle}</title>
     <meta
       name="description"
@@ -23,7 +23,7 @@ const { pageTitle } = Astro.props;
     />
     <link rel="stylesheet" href="https://use.typekit.net/eaq6veo.css" />
   </head>
-  <body class="grid">
+  <body class="md:grid">
     <MainNav />
 
     <section class="md:grid md:grid-cols-5 md:grid-rows-1 md:gap-0">
