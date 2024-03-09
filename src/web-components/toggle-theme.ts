@@ -39,7 +39,6 @@ class ToggleTheme extends HTMLElement {
   }
 
   toggleSelfClass() {
-    console.log("hello", this.#mode);
     const toggleThemeElement = document.querySelector("toggle-theme");
 
     const button =
@@ -47,10 +46,8 @@ class ToggleTheme extends HTMLElement {
 
     if (this.#mode === ToggleThemeMode.Dark) {
       button?.classList.add(ToggleThemeMode.Dark);
-      console.log("hello 1", button?.classList);
     } else {
       button?.classList.remove(ToggleThemeMode.Dark);
-      console.log("hello 2", button?.classList);
     }
   }
 
