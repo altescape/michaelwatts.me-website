@@ -12,12 +12,15 @@ const publishedPosts = allPosts
 ---
 
 <aside class="md:p-5 md:mw-border-r md:mw-bg-2">
-  <div id="show-menu-button" class="p-12 md:hidden dark:bg-secondary-900">
+  <div
+    id="show-menu-button"
+    class="p-4 md:hidden bg-secondary-100 dark:bg-secondary-900"
+  >
     <button>Show menu</button>
   </div>
   <ul
     id="menu-list"
-    class="list-none m-0 hidden md:block p-12 md:p-0 dark:bg-secondary-900"
+    class="list-none m-0 hidden md:block p-4 md:p-0 bg-secondary-100 dark:bg-secondary-900"
   >
     {
       publishedPosts.map((post) => (

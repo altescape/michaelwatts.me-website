@@ -22,7 +22,7 @@ class CodeInput extends HTMLElement {
           display: grid;
           grid-template-columns: repeat(6, 2ch);
           grid-template-rows: 1fr;
-          gap: 0px 1ch;
+          gap: 0px 0.25ch;
           position: relative;
           font-family: monospace;
           font-size: 2.5rem;
@@ -40,10 +40,10 @@ class CodeInput extends HTMLElement {
           border: none;
           outline: none;
           padding: 0;
-          letter-spacing: 2ch;
+          letter-spacing: 1.25ch;
           color: var(--mw-brand);
           background: transparent;
-          width: 18ch;
+          width: 13.5ch;
           user-select: none;
           opacity: .5;
           transition: opacity .2s ease-in-out;
@@ -61,7 +61,7 @@ class CodeInput extends HTMLElement {
           height: 3ch;
           z-index: -1;
           border-radius: 5px;
-          background-color: rgba(0, 0, 0, 0.2);
+          background-color: rgba(112, 112, 112, 0.5);
         }
       </style>
       <div class="cells">
