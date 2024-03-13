@@ -67,6 +67,10 @@
     @apply mb-3;
   }
 
+  .content > p:last-child {
+    @apply mb-0;
+  }
+
   a,
   .content > a {
     @apply text-brand-800 dark:text-brand-200 transition-colors hover:text-brand-700 hover:dark:text-brand-400 hover:underline;
@@ -85,11 +89,21 @@
   }
 
   .content > pre code {
-    @apply p-0 bg-transparent;
+    @apply p-0 bg-transparent text-sm;
+  }
+
+  html.dark .shiki,
+  html.dark .shiki span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    /* Optional, if you also want font styles */
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
   }
 
   .content > hr {
-    @apply my-10 mw-border-t border-secondary-100 dark:border-secondary-900;
+    @apply my-10 border-t border-secondary-200 dark:border-secondary-800;
   }
 
   .content > ol,
@@ -97,11 +111,11 @@
     @apply mb-5;
   }
 
-  .content > ol {
+  .content ol {
     @apply list-decimal list-inside ml-5;
   }
 
-  .content > ul {
+  .content ul {
     @apply list-disc list-inside ml-5;
   }
 
@@ -113,23 +127,10 @@
     @apply bg-gradient-to-r from-yellow-700 to-transparent border-yellow-400 text-yellow-200;
   }
 
-  .mw-border-b,
-  .mw-border-r,
-  .mw-border-t {
-    @apply border-dashed border-secondary-200 dark:border-secondary-700;
-  }
-  .mw-border-b {
-    @apply border-b-4;
-  }
-  .mw-border-r {
-    @apply border-r-4;
-  }
-  .mw-border-t {
-    @apply border-t-4;
-  }
-
   .mw-bg-2 {
-    @apply bg-secondary-100 dark:bg-secondary-900;
+    @apply bg-secondary-100;
+  }
+  html.dark .mw-bg-2 {
+    background-color: #121212;
   }
 }
-

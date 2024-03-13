@@ -12,7 +12,7 @@ export default {
     extend: {
       colors: {
         brand: colors.sky,
-        secondary: colors.zinc,
+        secondary: colors.neutral,
       },
     },
   },

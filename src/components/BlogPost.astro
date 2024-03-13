@@ -1,5 +1,5 @@
 ---
-const { url, title, date } = Astro.props;
+const { url, title, date, isActive } = Astro.props;
 
 const formattedDate = date
   ? new Date(date).toLocaleDateString("en-gb", {
@@ -11,7 +11,7 @@ const formattedDate = date
 ---
 
 <li
-  class="flex flex-col mw-border-b pb-5 mb-5 last:border-none last:mb-0 last:pb-0 xl:flex-row xl:justify-between xl:items-baseline leading-tight"
+  class="flex flex-col mb-3 last:border-none last:mb-0 last:pb-0 xl:flex-row xl:justify-between xl:items-baseline leading-tight"
 >
   <a href={url} class="block w-full hover:underline">{title}</a>
   <time class="shrink text-xs text-nowrap xl:pl-5 mt-2">{formattedDate}</time>

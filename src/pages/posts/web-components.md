@@ -19,7 +19,7 @@ hello-world {
 
 Here is an example of the simplest web component which outputs "Hello World!".
 
-<hello-world></hello-world>
+<hello-world class="border border-rose-300 px-5"></hello-world>
 
 To include this on the page we simply add the following to our HTML (or in this case our markdown):
 
@@ -54,7 +54,7 @@ customElements.define("hello-world", HelloWorld);
 
 Outputs the following:
 
-<hello-world name="you"></hello-world>
+<hello-world name="you" class="border border-rose-300 px-5"></hello-world>
 
 And below is code for accepting attributes/props. Note the two newly added methods (plus the updated string interpolation output).
 

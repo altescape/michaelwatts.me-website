@@ -60,8 +60,9 @@ class CodeInput extends HTMLElement {
           width: 2ch;
           height: 3ch;
           z-index: -1;
-          border-radius: 5px;
-          background-color: rgba(112, 112, 112, 0.5);
+          border-radius: 8px;
+          background-color: rgba(112, 112, 112, 0.2);
+          border: 1px solid rgba(112, 112, 112, 0.25);
         }
       </style>
       <div class="cells">

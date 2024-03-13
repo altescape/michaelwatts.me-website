@@ -5,12 +5,12 @@ import MainFooter from "../components/Footer.astro";
 import "../styles/styles.css";
 
 const mainTitle = "Michael Watts, Software Engineer";
-const { pageTitle } = Astro.props;
+const { pageTitle, sidebar } = Astro.props;
 ---
 
 <html
   lang="en"
-  class="bg-secondary-50 dark:bg-secondary-950 text-secondary-950 dark:text-secondary-300"
+  class="bg-secondary-50 dark:bg-secondary-900 text-secondary-950 dark:text-secondary-300"
 >
   <head>
     <meta charset="utf-8" />
@@ -24,19 +24,25 @@ const { pageTitle } = Astro.props;
     <link rel="stylesheet" href="https://use.typekit.net/eaq6veo.css" />
   </head>
   <body class="md:grid">
-    <MainNav />
+    <section
+      class:list={[sidebar ? "md:grid md:grid-cols-8  md:gap-0" : "mx-auto"]}
+    >
+      {sidebar ? <Sidebar /> : <MainNav classList="pt-5" />}
 
-    <section class="md:grid md:grid-cols-5 md:grid-rows-1 md:gap-0">
-      <Sidebar />
-
-      <div class="w-full md:col-span-4">
-        <div id="main" role="main" class="min-h-lvh max-w-6xl">
-          <div class="content p-4 md:p-12 w-full">
+      <div class="w-full md:col-span-6">
+        <div id="main" role="main" class="min-h-lvh max-w-6xl mt-12">
+          <div class="content px-4 pb-4 md:px-16 md:pb-16 w-full">
             <slot />
           </div>
         </div>
-        <MainFooter />
+        <MainFooter classList="p-4 md:p-16 md:pt-0" />
       </div>
     </section>
+    <script>
+      // used to be able to use web components
+      await import.meta.glob("../web-components/**/*.ts", {
+        eager: true,
+      });
+    </script>
   </body>
 </html>

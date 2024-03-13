@@ -1,9 +1,11 @@
 ---
-
+const { classList } = Astro.props;
 ---
 
-<footer role="contentinfo" class="mw-bg-2 mw-border-t w-full">
-  <div class="p-5">
+<footer role="contentinfo" class:list={["w-full", classList]}>
+  <div
+    class="container mx-auto border-t border-secondary-200 dark:border-secondary-800 pt-12"
+  >
     <p class="m-0">
       <strong>Contact me:</strong>
       <br />

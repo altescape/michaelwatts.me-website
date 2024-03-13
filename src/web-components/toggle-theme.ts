@@ -95,7 +95,7 @@ class ToggleTheme extends HTMLElement {
     this.#shadow.innerHTML = `
       <style>
         #toggle-theme {
-          --icon-background-color-dark: #000000;
+          --icon-background-color-dark: #081d73;
           --icon-background-color-light: #44b7e6;
           --icon-color: #F0E68C;
           --icon-color-darker: #FFC72C;
