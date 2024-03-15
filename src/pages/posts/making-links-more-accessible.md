@@ -8,10 +8,7 @@ image:
   url: "https://docs.astro.build/assets/full-logo-light.png"
   alt: "A link image"
 tags: ["accessibility"]
-wip: true
 ---
-
-I'm looking to expand my knowledge of web accessibility and share my findings with other developers.
 
 Although I've been involved in website and app development for quite some time, it's only recently that I've started to appreciate the importance of addressing the difficulties faced by people with disabilities. While I had previously come across accessibility standards and guidelines, I'm now beginning to genuinely understand how important it is for people with disabilities.
 
@@ -58,6 +55,7 @@ Below is an example of a very simple web component that provides too much inform
   </div>
 </li>
 ```
+
 ##### Screen reader output:
 
 1. link image to https://example.com,
@@ -89,26 +87,29 @@ Changing the previous block to the following and using a neat little trick adopt
       />
     </div>
   </li>
-<ul>
+  <ul>
+    <style>
+      .article-block {
+        display: flex;
+        position: relative;
 
-<style>
-.article-block {
-  display: flex;
-  position: relative;
-
-  a {
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 2;
-    }
-  }
-}
-</style>
+        a {
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+          }
+        }
+      }
+    </style>
+  </ul>
+</ul>
 ```
+
 ##### Screen reader output:
+
 1. "Example Link" link

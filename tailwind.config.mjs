@@ -7,7 +7,17 @@ export default {
   theme: {
     fontFamily: {
       sans: ["proxima-nova", "sans-serif"],
-      serif: ["ivypresto-headline", "serif"],
+      serif: ["santelia-rough-two", "serif"],
+    },
+    fontSize: {
+      sm: "0.9rem",
+      base: "1.1rem",
+      lg: "1.18rem",
+      xl: "1.25rem",
+      "2xl": "1.563rem",
+      "3xl": "1.953rem",
+      "4xl": "2.441rem",
+      "5xl": "3.052rem",
     },
     extend: {
       colors: {

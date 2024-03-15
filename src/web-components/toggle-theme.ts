@@ -53,14 +53,14 @@ class ToggleTheme extends HTMLElement {
 
   toggleIcon() {
     const toggleThemeElement = document.querySelector("toggle-theme");
+    const button =
+      toggleThemeElement?.shadowRoot?.getElementById("toggle-theme");
 
-    const iconContainer =
-      toggleThemeElement?.shadowRoot?.querySelector(".icon-container");
     this.#icon = toggleThemeElement?.shadowRoot?.querySelector("#icon");
 
     if (this.#icon === null || this.#icon === undefined) return;
 
-    iconContainer?.classList.add("animating");
+    button?.classList.add("animating");
 
     setTimeout(() => {
       if (this.#icon !== null && this.#icon !== undefined) {
@@ -69,12 +69,12 @@ class ToggleTheme extends HTMLElement {
     }, 500);
 
     setTimeout(() => {
-      iconContainer?.classList.remove("animating");
-      iconContainer?.classList.add("done-animating");
+      button?.classList.remove("animating");
+      button?.classList.add("done-animating");
     }, 1000);
 
     setTimeout(() => {
-      iconContainer?.classList.remove("done-animating");
+      button?.classList.remove("done-animating");
     }, 1500);
   }
 
@@ -112,6 +112,7 @@ class ToggleTheme extends HTMLElement {
           width: 26px;
           height: 26px;
           padding: 0;
+          box-shadow: 0 1px 1px 0 rgb(from var(--icon-color) r g b / 0.3) inset;
         }
         #toggle-theme.dark {
           background: var(--icon-background-color-dark);
@@ -126,26 +127,19 @@ class ToggleTheme extends HTMLElement {
           width: 26px;
           height: 26px;
           overflow: hidden;
+          transform: scale(0.8);
         }
-        .icon-container.animating {
-          animation: move 1s;
+        #toggle-theme.animating {
+          animation: glow 1s;
         }
-        .icon-container.done-animating {
+        #toggle-theme.done-animating {
           animation: none;
         }
-        @keyframes move {
-          0% {
-            transform: translateX(0);
-          }
-          50% {
-            transform: translateX(100%);
-          }
-          50.001% {
-            transform: translateX(-35%) scale(0.2);
-          }
-          100% {
-            transform: translateX(0) scale(1);
-          }
+        #toggle-theme.animating .icon-container {
+          animation: move 1s;
+        }
+        #toggle-theme.done-animating .icon-container {
+          animation: none;
         }
         .icon {
           width: 18px;
@@ -161,6 +155,34 @@ class ToggleTheme extends HTMLElement {
         }
         .hidden {
           display: none;
+        }
+        @keyframes move {
+          0% {
+            transform: translateX(0) scale(0.8);
+          }
+          50% {
+            transform: translateX(100%) translateY(-50%) scale(0.2);
+          }
+          50.001% {
+            transform: translateX(-35%) translateY(15%) scale(0.8);
+          }
+          100% {
+            transform: translateX(0) scale(0.8);
+          }
+        }
+        @keyframes glow {
+          0% {
+            transform: scale(1);
+            box-shadow: 0 0 1px 1px rgb(from var(--icon-color) r g b / 0) inset;
+          }
+          50% {
+            transform: scale(1.2);
+            box-shadow: 0 1px 1px 0 rgb(from var(--icon-color) r g b / 0) inset;
+          }
+          100% {
+            transform: scale(1);
+            box-shadow: 0 1px 1px 0 rgb(from var(--icon-color) r g b / 0.3) inset;
+          }
         }
       </style>
       <button

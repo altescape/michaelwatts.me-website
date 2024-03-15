@@ -27,10 +27,11 @@ const { pageTitle, sidebar } = Astro.props;
     <section
       class:list={[sidebar ? "md:grid md:grid-cols-8  md:gap-0" : "mx-auto"]}
     >
-      {sidebar ? <Sidebar /> : <MainNav classList="pt-5" />}
+      {sidebar ? <Sidebar /> : null}
 
       <div class="w-full md:col-span-6">
-        <div id="main" role="main" class="min-h-lvh max-w-6xl mt-12">
+        <div id="main" role="main" class="min-h-lvh max-w-6xl mt-8">
+          <MainNav classList="hidden md:flex px-4 md:px-16" />
           <div class="content px-4 pb-4 md:px-16 md:pb-16 w-full">
             <slot />
           </div>
