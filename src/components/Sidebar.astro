@@ -13,7 +13,7 @@ const publishedPosts = allPosts
   );
 ---
 
-<aside class="md:col-span-2 md:py-5 md:px-10 md:mw-bg-2">
+<aside class="md:col-span-2 md:py-5 md:px-10 mw-bg-2">
   <header
     class="main-nav flex justify-between items-center py-5 px-5 md:px-0 md:pb-10"
     role="banner"
@@ -31,13 +31,13 @@ const publishedPosts = allPosts
 
   <div
     id="show-menu-button"
-    class="p-4 md:hidden bg-secondary-100 dark:mw-bg-2"
+    class="flex flex-col items-center p-4 md:hidden bg-secondary-100 dark:mw-bg-2"
   >
     <button>Show posts</button>
   </div>
   <ul
     id="menu-list"
-    class="list-none m-0 hidden md:block p-4 md:p-0 bg-secondary-100 dark:mw-bg-2"
+    class="list-none m-0 hidden flex-col items-center md:block p-4 md:p-0 bg-secondary-100 dark:mw-bg-2"
   >
     {
       publishedPosts.map((post) => (
@@ -53,16 +53,25 @@ const publishedPosts = allPosts
 
 <script>
   const showMenuButton = document.getElementById("show-menu-button");
+  enum MenuText {
+    Show = "Show posts menu",
+    Hide = "Hide menu",
+  }
+
+  if (showMenuButton) {
+    showMenuButton.innerText = MenuText.Show;
+  }
 
   showMenuButton?.addEventListener("click", (e) => {
     e.preventDefault();
     const menu = document.getElementById("menu-list");
     menu?.classList.toggle("hidden");
+    menu?.classList.toggle("flex");
 
     if (menu?.classList.contains("hidden")) {
-      showMenuButton.innerText = "Show posts";
+      showMenuButton.innerText = MenuText.Show;
     } else {
-      showMenuButton.innerText = "Hide posts";
+      showMenuButton.innerText = MenuText.Hide;
     }
   });
 </script>

@@ -28,7 +28,7 @@
   }
 
   h2,h3,h4,h5,h6 {
-    @apply text-secondary-950 dark:text-secondary-400 text-3xl font-bold mt-5 mb-3;
+    @apply text-secondary-950 dark:text-secondary-400 text-3xl font-bold mt-5 mb-3 text-balance leading-tight;
   }
 
   h2 {
@@ -111,6 +111,11 @@
     @apply list-disc list-inside ml-5;
   }
 
+  .content > ol.list-none,
+  .content > ul.list-none {
+    @apply ml-0;
+  }
+
   .content > .notification {
     @apply p-4 border-l-4;
   }
@@ -124,5 +129,17 @@
   }
   html.dark .mw-bg-2 {
     background-color: #121212;
+  }
+
+  .bg-stipes-fuchsia {
+    background-color: #e879f91a;
+    background-image: linear-gradient(135deg,#d946ef80 10%,#0000 0,#0000 50%,#d946ef80 0,#d946ef80 60%,#0000 0,#0000);
+    background-size: 7.07px 7.07px;;
+  }
+
+  .bg-stipes-slate {
+    background-color: #6c757d80;
+    background-image: linear-gradient(135deg, #6c757d80 10%, #0000 0, #0000 50%, #6c757d80 0, #6c757d80 60%, #0000 0, #0000);
+    background-size: 7.07px 7.07px;;
   }
 }
