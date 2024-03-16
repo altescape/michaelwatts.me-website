@@ -23,31 +23,42 @@
     @apply bg-brand-400 dark:bg-brand-700;
   }
 
-  h1 {
+    h1,
+  .content > h1 {
     @apply text-4xl mb-10 font-serif text-balance italic text-secondary-950 dark:text-secondary-300;
   }
 
-  h2,h3,h4,h5,h6 {
-    @apply text-secondary-950 dark:text-secondary-400 text-3xl font-bold mt-5 mb-3 text-balance leading-tight;
+  h2,h3,h4,h5,h6,
+  .content > h2,
+  .content > h3,
+  .content > h4,
+  .content > h5,
+  .content > h6 {
+    @apply text-secondary-950 dark:text-secondary-400 text-3xl font-bold mt-5 mb-3;
   }
 
-  h2 {
+  h2,
+  .content > h2 {
     @apply text-secondary-800 dark:text-secondary-300;
   }
 
-  h3 {
+  h3,
+  .content > h3 {
     @apply text-2xl;
   }
 
-  h4 {
+  h4,
+  .content > h4 {
     @apply text-xl;
   }
 
-  h5 {
+  h5,
+  .content > h5 {
     @apply text-lg;
   }
 
-  h6 {
+  h6,
+  .content > h6 {
     @apply text-base font-bold;
   }
 
