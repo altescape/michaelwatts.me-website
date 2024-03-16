@@ -19,11 +19,7 @@ const currentPath = pathname.slice(1);
         currentPath === "" ? "active underline" : null,
       ]}
     >
-      <MainNavLink
-        href="/"
-        isActive={currentPath === "" || currentPath.includes("posts")}
-        >Home</MainNavLink
-      >
+      <MainNavLink href="/" isActive={currentPath === ""}>Home</MainNavLink>
     </li>
     <li
       class:list={[
