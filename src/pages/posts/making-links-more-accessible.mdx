@@ -11,13 +11,15 @@ tags: ["accessibility"]
 ---
 
 
-Although I have been involved in website and app development for quite some time, I have recently gained a deeper appreciation for addressing the difficulties faced by people with disabilities. While I had previously encountered and adhered to general accessibility standards and guidelines, I now understand the importance of prioritizing accessibility for people with disabilities.
-
 > At least 1 in 5 people in the UK have a long term illness, impairment or disability. Many more have a temporary disability.
 >
 > &mdash; <cite>gov.uk website - Understanding accessibility</cite>
 
-There are [16 million people in the UK](https://www.scope.org.uk/media/disability-facts-figures/) who have a long term disability, many more with a temporary disability. Any one of us, at any given time, could encounter an injury resulting in some form of disability, whether it's related to mobility, hearing, vision, or any other potential impairment.
+There are [16 million people in the UK](https://www.scope.org.uk/media/disability-facts-figures/) who have a long term disability,
+many more with a temporary disability. Any one of us, at any given time, could experience an injury or illness that results in some form of disability
+with mobility, hearing, vision, or other potential impairments.
+
+To cover issues with visual impairments, I will focus on screen readers and how they interpret links on a web page.
 
 ## Navigating web pages with a screen reader
 
@@ -137,7 +139,7 @@ Changing the previous block to the following and using a neat little trick I nic
 
 ##### Screen reader output:
 
-And this is what NVDA will read out aloud from the above HTML only a single line!
+And this is what NVDA will read out aloud:
 
 <ul class="list-none bg-stipes-fuchsia rounded-lg font-mono m-0 p-3">
   <li class="p-3 font-bold bg-fuchsia-500 mb-3 rounded-lg list-none">💬 "Example Link" link</li>
@@ -145,3 +147,7 @@ And this is what NVDA will read out aloud from the above HTML only a single line
   <li class="p-3 font-bold bg-stipes-fuchsia opacity-30 mb-3 rounded-lg list-none line-through">💬 Heading tag H6 0. Link "Example Link" to "https://example.com"</li>
   <li class="p-3 font-bold bg-stipes-fuchsia opacity-15 rounded-lg list-none line-through">💬 Jan 02, 2023</li>
 </ul>
+
+From the above HTML, now only a single line is read out to the listener, all other (perhaps/perhaps not irrelevant) information is no longer presented.
+It's up to you to decide if this is a good thing or not in terms of the content that you wish to present to your users, but it does illustrate the importance of
+considering the semantics of your HTML structure, but also considering when it does look correct that the screen reader might not interpret it as such.

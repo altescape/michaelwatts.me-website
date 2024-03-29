@@ -1,5 +1,6 @@
 ---
 import MainNavLink from "./MainNavLink.astro";
+import ToggleTheme from "./ToggleTheme.svelte";
 
 const { classList } = Astro.props;
 const pathname = new URL(Astro.request.url).pathname;
@@ -34,6 +35,6 @@ const currentPath = pathname.slice(1);
   </ul>
 
   <div class="ml-3">
-    <toggle-theme></toggle-theme>
+    <ToggleTheme client:only="svelte" />
   </div>
 </nav>

@@ -8,7 +8,7 @@ image:
   url: "https://docs.astro.build/assets/full-logo-light.png"
   alt: "A link image"
 tags: ["recipes"]
-draft: false
+draft: true
 ---
 
 ## Tare
