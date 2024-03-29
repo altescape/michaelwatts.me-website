@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: "CSS relative colour syntax"
 pubDate: 2024-02-16
 description: "Exploring new proposal for adapting colours based on another colour's channels and values"

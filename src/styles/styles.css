@@ -76,7 +76,7 @@
   }
 
   a {
-    @apply text-brand-800 dark:text-brand-200 transition-colors hover:text-brand-700 hover:dark:text-brand-400 hover:underline;
+    @apply text-brand-800 dark:text-brand-600 transition-colors hover:text-brand-700 hover:dark:text-brand-700 hover:underline;
   }
 
   .content > blockquote {
@@ -115,11 +115,11 @@
   }
 
   .content ol {
-    @apply list-decimal list-inside ml-5;
+    @apply list-decimal list-inside;
   }
 
   .content ul {
-    @apply list-disc list-inside ml-5;
+    @apply list-disc list-inside;
   }
 
   .content > ol.list-none,
@@ -142,13 +142,19 @@
     background-color: #121212;
   }
 
-  .bg-stipes-fuchsia {
+  .bg-stripes-fuchsia {
     background-color: #e879f91a;
     background-image: linear-gradient(135deg,#d946ef80 10%,#0000 0,#0000 50%,#d946ef80 0,#d946ef80 60%,#0000 0,#0000);
     background-size: 7.07px 7.07px;;
   }
 
-  .bg-stipes-slate {
+  .bg-stripes-amber {
+    background-color: #f59e0b1a;
+    background-image: linear-gradient(135deg,#f59e0b80 10%,#0000 0,#0000 50%,#f59e0b80 0,#f59e0b80 60%,#0000 0,#0000);
+    background-size: 7.07px 7.07px;;
+  }
+
+  .bg-stripes-slate {
     background-color: #6c757d80;
     background-image: linear-gradient(135deg, #6c757d80 10%, #0000 0, #0000 50%, #6c757d80 0, #6c757d80 60%, #0000 0, #0000);
     background-size: 7.07px 7.07px;;

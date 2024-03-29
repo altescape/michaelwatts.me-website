@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: "Web components"
 pubDate: 2023-10-26
 description: "A paddle in the shallows of web components, a deeper dive to come later"

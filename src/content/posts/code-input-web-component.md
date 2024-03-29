@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: "Code input web component"
 pubDate: 2024-01-15
 description: "PIN or code input boxes (like you see when logging into PayPal, etc.), a way of doing it with a single input but appears to have 6 separate inputs"
