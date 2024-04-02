@@ -58,13 +58,13 @@ The below HTML represents a navigation list item with a link and an image. The l
 
 This is what NVDA will read out aloud from the component on the left:
 
-<ul class="list-none bg-stripes-slate rounded-lg m-0 p-5 flex gap-3">
-  <li class="list-none w-80 bg-slate-100 dark:bg-slate-800 rounded-lg overflow-hidden shadow-2xl border mb-0">
+<ul class="list-none bg-stripes-slate rounded-lg m-0 p-5 flex flex-col xl:flex-row gap-3">
+  <li class="list-none xl:w-80 bg-slate-100 dark:bg-slate-800 rounded overflow-hidden shadow-2xl border mb-0">
     <a href="https://example.com">
       <img
-        src="https://picsum.photos/id/27/300/300"
+        src="https://picsum.photos/id/27/300/200"
         alt="A man stands on the edge of a cliff looking out to a rough sea."
-        class="w-full"
+        class="w-full lg:h-36 object-cover"
       />
     </a>
     <div class="flex justify-between items-baseline p-3 leading-tight">
@@ -89,10 +89,10 @@ And this is part of a list so it is worth considering that if there are many mor
 
 #### Improving the component
 
-Changing the previous block to the following and using a neat little trick I nicked from the BBC you can cut down the chatter to a single line:
+Changing the previous block to the following and using a neat little trick I nicked from the BBC website you can cut down the chatter to a single line:
 
-<ul class="list-none bg-stripes-slate rounded-lg m-0 p-5 flex gap-3">
-  <li class="flex flex-col list-none w-80 bg-slate-100 dark:bg-slate-800 rounded-lg overflow-hidden shadow-2xl border relative mb-0">
+<ul class="list-none bg-stripes-slate rounded-lg m-0 p-5 flex flex-col xl:flex-row gap-3">
+  <li class="flex flex-col list-none xl:w-80 bg-slate-100 dark:bg-slate-800 rounded overflow-hidden shadow-2xl border relative mb-0">
     <p class="order-2 flex justify-between items-baseline p-3 m-0">
       <a href="https://example.com" class="text-lg leading-tight font-bold after::content-[''] after:absolute after:top-0 after:left-0 after:right-0 after:bottom-0 after:z-99">War a real threat and Europe not ready, warns Poland's PM</a>
       <time class="text-sm">01/02/24</time>
@@ -100,7 +100,7 @@ Changing the previous block to the following and using a neat little trick I nic
     <img
       src="https://picsum.photos/id/27/300/200"
       alt="A man stands on the edge of a cliff looking out to a rough sea."
-      class="w-full"
+      class="w-full lg:h-36 object-cover"
     />
   </li>
   <li class="list-none w-auto mb-0 border p-3 rounded w-full">
