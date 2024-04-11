@@ -4,7 +4,10 @@ const { href, isActive } = Astro.props;
 const activeClassList = isActive ? "active underline text-brand-400" : "";
 ---
 
-<a href={href} class="text-brand-800 dark:text-brand-200">
+<a
+  href={href}
+  class="transition-colors text-brand-800 dark:text-brand-200 hover:bg-brand-100 hover:dark:bg-brand-100 hover:dark:text-secondary-900 hover:no-underline rounded p-2"
+>
   <span class:list={["font-bold", "mx-2", activeClassList]}>
     <slot />
   </span>

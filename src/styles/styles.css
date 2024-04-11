@@ -23,72 +23,76 @@
     @apply bg-brand-400 dark:bg-brand-700;
   }
 
-    h1,
-  .content > h1 {
-    @apply text-4xl mb-10 font-serif text-balance italic text-secondary-950 dark:text-secondary-300 leading-tight;
+  h1,
+  .content h1 {
+    @apply text-4xl mb-10 font-header text-balance italic text-secondary-950 dark:text-rose-50 leading-tight;
   }
 
   h2,h3,h4,h5,h6,
-  .content > h2,
-  .content > h3,
-  .content > h4,
-  .content > h5,
-  .content > h6 {
-    @apply text-secondary-950 dark:text-secondary-400 text-3xl font-bold mt-5 mb-3 leading-tight;
+  .content h2,
+  .content h3,
+  .content h4,
+  .content h5,
+  .content h6 {
+    @apply text-secondary-950 dark:text-rose-50 text-3xl font-bold mt-5 mb-3 leading-tight;
   }
 
   h2,
-  .content > h2 {
-    @apply text-secondary-800 dark:text-secondary-300;
+  .content h2 {
+    @apply text-secondary-800 dark:text-rose-50;
   }
 
   h3,
-  .content > h3 {
+  .content h3 {
     @apply text-2xl;
   }
 
   h4,
-  .content > h4 {
+  .content h4 {
     @apply text-xl;
   }
 
   h5,
-  .content > h5 {
+  .content h5 {
     @apply text-lg;
   }
 
   h6,
-  .content > h6 {
+  .content h6 {
     @apply text-base font-bold;
   }
 
   p,
-  .content > p {
-    @apply mb-3;
+  .content p {
+    @apply mb-5 font-serif leading-loose font-light text-pretty;
   }
 
   p, a, li {
     @apply text-base;
   }
 
-  .content > p:last-child {
+  .content p:last-child {
     @apply mb-0;
   }
 
   a {
-    @apply text-brand-800 dark:text-brand-600 transition-colors hover:text-brand-700 hover:dark:text-brand-700 hover:underline;
+    @apply text-brand-800 dark:text-brand-200 transition-colors hover:text-brand-500 hover:dark:text-brand-400 hover:underline;
   }
 
-  .content > blockquote {
+  .content a {
+    @apply underline underline-offset-2;
+  }
+
+  .content blockquote {
     @apply p-10 mb-5 bg-gradient-to-r from-secondary-100 dark:from-secondary-900 to-transparent border-l-4 border-secondary-300 dark:border-secondary-600 text-secondary-950 dark:text-secondary-200;
   }
 
-  .content > hr {
+  .content hr {
     @apply my-10 border-t border-secondary-200 dark:border-secondary-800;
   }
 
-  .content > ol,
-  .content > ul {
+  .content ol,
+  .content ul {
     @apply mb-5;
   }
 
@@ -100,24 +104,17 @@
     @apply list-disc list-inside;
   }
 
-  .content > ol.list-none,
-  .content > ul.list-none {
+  .content ol.list-none,
+  .content ul.list-none {
     @apply ml-0;
   }
 
-  .content > .notification {
+  .content .notification {
     @apply p-4 border-l-4;
   }
 
-  .content > .notification.warning {
+  .content .notification.warning {
     @apply bg-gradient-to-r from-yellow-700 to-transparent border-yellow-400 text-yellow-200;
-  }
-
-  .mw-bg-2 {
-    @apply bg-secondary-100;
-  }
-  html.dark .mw-bg-2 {
-    background-color: #121212;
   }
 
   .bg-stripes-fuchsia {
@@ -140,7 +137,11 @@
 
   /* Code blocks */
   figure[data-rehype-pretty-code-figure] pre {
-    @apply py-4 mb-5 rounded-lg overflow-x-auto;
+    @apply py-4 mb-5 rounded-lg overflow-x-auto border border-brand-200;
+  }
+
+  html.dark figure[data-rehype-pretty-code-figure] pre {
+    @apply bg-secondary-950 border-secondary-950;
   }
 
   [data-highlighted-line] {
@@ -188,11 +189,12 @@
     @apply !rounded-t-none;
   }
 
-  code {
+  /* Line numbers */
+  pre > code {
     counter-reset: line;
   }
 
-  code > [data-line]::before {
+  pre > code > [data-line]::before {
     counter-increment: line;
     content: counter(line);
 
@@ -204,11 +206,24 @@
     color: gray;
   }
 
-  code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  pre > code[data-line-numbers-max-digits="2"] > [data-line]::before {
     width: 2rem;
   }
 
-  code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  pre > code[data-line-numbers-max-digits="3"] > [data-line]::before {
     width: 3rem;
+  }
+
+  /* Dark/Light mode */
+  html.dark code[data-theme*=" "],
+  html.dark code[data-theme*=" "] span {
+    @apply bg-secondary-950;
+    color: var(--shiki-dark);
+  }
+
+  code[data-theme*=" "],
+  code[data-theme*=" "] span {
+    @apply bg-transparent;
+    color: var(--shiki-light);
   }
 }

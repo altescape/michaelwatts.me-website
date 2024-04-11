@@ -7,7 +7,8 @@ export default {
   theme: {
     fontFamily: {
       sans: ["proxima-nova", "sans-serif"],
-      serif: ["santelia-rough-two", "serif"],
+      serif: ["merriweather", "serif"],
+      header: ["santelia-rough-two", "serif"],
     },
     fontSize: {
       sm: "0.9rem",
@@ -21,8 +22,9 @@ export default {
     },
     extend: {
       colors: {
-        brand: colors.sky,
+        brand: colors.rose,
         secondary: colors.neutral,
+        main: "#fff6f6",
       },
     },
   },

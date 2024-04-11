@@ -85,10 +85,10 @@ So instead of all that we can write a schema, parse it and catch and deal with a
 
 It's very simple to write a Zod schema, something like this:
 
-```ts
+```ts /urlParamsSchema/
 import { z } from "zod";
 
-export const queryParamsSchema = z.object({
+export const urlParamsSchema = z.object({
   firstname: z.string().min(1, { message: "firstname is required" }),
   lastname: z.string().min(1, { message: "lastname is required" }),
   addressline1: z.string().min(1, { message: "addressline1 is required" }),
@@ -96,14 +96,14 @@ export const queryParamsSchema = z.object({
   age: z.string().min(1, { message: "age is required" }),
 });
 
-export type UserParams = z.infer<typeof queryParamsSchema>;
+export type UrlParams = z.infer<typeof urlParamsSchema>;
 ```
 
 ### Parse the object to validate the data structure
 
 Based on our schema we can run the following to parse an object against the schema to see if there are any problems.
 
-```ts
+```ts {13}
 let errorMode = false;
 
 // Query params are converted to an object, Vue router does auto-magically for you
@@ -116,7 +116,7 @@ const routeQuery = {
 };
 
 try {
-  queryParamsSchema.parse(routeQuery);
+  urlParamsSchema.parse(routeQuery);
 } catch (error) {
   console.error("Error parsing query params", error);
   // Handle the error somehow...
@@ -125,16 +125,16 @@ try {
 
 That's a helluva lot more easier and attractive.
 
-But also, _very importantly_ when future self or another developer comes by your code and needs to know what properties are required or optional for a User, you or they have an easy way to see. By using that one line
+But also, _very importantly_ when future self or another developer comes by your code and needs to know what properties are required or optional for `UserParams{:ts}`, you or they have an easy way to see. By using this line...
 
-```ts
-export type QueryParams = z.infer<typeof queryParamsSchema>;
+```ts showLineNumbers{11}
+export type UrlParams = z.infer<typeof urlParamsSchema>;
 ```
 
-Your IDE can infer the TypeScript type from the Zod schema, giving you a nice output of the data structure:
+...your IDE can infer the TypeScript type from the Zod schema, giving you a nice output of the data structure:
 
 ```ts
-type QueryParams = {
+type UrlParams = {
   firstname: string;
   lastname: sring;
   addressline: string;

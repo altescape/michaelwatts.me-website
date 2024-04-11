@@ -15,7 +15,10 @@ export default defineConfig({
       [
         rehypePrettyCode,
         {
-          theme: "vitesse-dark",
+          theme: {
+            dark: "vitesse-dark",
+            light: "vitesse-light",
+          },
           onVisitHighlightedLine(node) {
             node?.properties?.className?.push("highlighted");
           },
