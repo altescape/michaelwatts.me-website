@@ -83,28 +83,6 @@
     @apply p-10 mb-5 bg-gradient-to-r from-secondary-100 dark:from-secondary-900 to-transparent border-l-4 border-secondary-300 dark:border-secondary-600 text-secondary-950 dark:text-secondary-200;
   }
 
-  .content > pre {
-    @apply p-5 rounded-sm mb-5;
-  }
-
-  .content > code {
-    @apply bg-secondary-200 dark:bg-secondary-900 p-0.5 rounded-sm;
-  }
-
-  .content > pre code {
-    @apply p-0 bg-transparent;
-  }
-
-  html.dark .shiki,
-  html.dark .shiki span {
-    color: var(--shiki-dark) !important;
-    background-color: var(--shiki-dark-bg) !important;
-    /* Optional, if you also want font styles */
-    font-style: var(--shiki-dark-font-style) !important;
-    font-weight: var(--shiki-dark-font-weight) !important;
-    text-decoration: var(--shiki-dark-text-decoration) !important;
-  }
-
   .content > hr {
     @apply my-10 border-t border-secondary-200 dark:border-secondary-800;
   }
@@ -158,5 +136,79 @@
     background-color: #6c757d80;
     background-image: linear-gradient(135deg, #6c757d80 10%, #0000 0, #0000 50%, #6c757d80 0, #6c757d80 60%, #0000 0, #0000);
     background-size: 7.07px 7.07px;;
+  }
+
+  /* Code blocks */
+  figure[data-rehype-pretty-code-figure] pre {
+    @apply py-4 mb-5 rounded-lg overflow-x-auto;
+  }
+
+  [data-highlighted-line] {
+    background: rgba(255, 234, 200, 0.07);
+  }
+
+  [data-highlighted-chars] {
+    @apply bg-zinc-600/50 rounded;
+    box-shadow: 0 0 0 4px rgb(255, 234, 200 / 0.5);
+  }
+
+  [data-chars-id] {
+    border-bottom-width: 2px;
+    padding: .25rem;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)
+  }
+
+  [data-chars-id] {
+    @apply shadow-none p-1 border-b-2;
+  }
+
+  [data-chars-id] span {
+    @apply !text-inherit;
+  }
+
+  [data-chars-id='a'] {
+    @apply !text-pink-300 bg-rose-800/50 border-b-pink-600 font-bold;
+  }
+
+  [data-chars-id='b'] {
+    @apply !text-yellow-300 bg-yellow-800/50 border-b-yellow-600 font-bold;
+  }
+
+  [data-chars-id='c'] {
+    @apply !text-purple-200 bg-purple-800/50 border-b-purple-600 font-bold;
+  }
+
+  [data-rehype-pretty-code-title] {
+    @apply bg-zinc-700 text-zinc-200 rounded-t-lg py-2 px-3 font-semibold text-sm;
+  }
+
+  figcaption + pre {
+    @apply !rounded-t-none;
+  }
+
+  code {
+    counter-reset: line;
+  }
+
+  code > [data-line]::before {
+    counter-increment: line;
+    content: counter(line);
+
+    /* Other styling */
+    display: inline-block;
+    width: 1rem;
+    margin-right: 2rem;
+    text-align: right;
+    color: gray;
+  }
+
+  code[data-line-numbers-max-digits="2"] > [data-line]::before {
+    width: 2rem;
+  }
+
+  code[data-line-numbers-max-digits="3"] > [data-line]::before {
+    width: 3rem;
   }
 }

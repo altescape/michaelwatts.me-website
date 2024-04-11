@@ -89,7 +89,7 @@
 <button
   id="toggle-theme"
   aria-label="Toggle light/dark mode"
-  class="dark animating done-animating"
+  class="dark animating done-animating hover:scale-125"
   bind:this={button}
   on:click={handleClick}
 >
@@ -132,6 +132,7 @@
     height: 26px;
     padding: 0;
     box-shadow: 0 1px 1px 0 rgb(from var(--icon-color) r g b / 0.3) inset;
+    transition: transform 0.3s ease;
   }
   button.dark {
     background: var(--icon-background-color-dark);
@@ -149,7 +150,7 @@
     transform: scale(0.8);
   }
   .animating {
-    animation: glow 1s;
+    animation: scaleup 1s;
   }
   button.done-animating {
     animation: none;
@@ -186,13 +187,13 @@
       transform: translateX(0) scale(0.8);
     }
   }
-  @keyframes glow {
+  @keyframes scaleup {
     0% {
       transform: scale(1);
       box-shadow: 0 0 1px 1px rgb(from var(--icon-color) r g b / 0) inset;
     }
     50% {
-      transform: scale(1.2);
+      transform: scale(1.5);
       box-shadow: 0 1px 1px 0 rgb(from var(--icon-color) r g b / 0) inset;
     }
     100% {
