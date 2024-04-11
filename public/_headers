@@ -2,4 +2,4 @@
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   Referrer-Policy: strict-origin
   Permissions-Policy: geolocation=(), microphone=(), sync-xhr=(self)
-  Content-Security-Policy: default-src https:; script-src 'self'; img-src 'self' data:
+  Content-Security-Policy: default-src https:; script-src 'self'; img-src 'self' data:; frame-src 'self'
