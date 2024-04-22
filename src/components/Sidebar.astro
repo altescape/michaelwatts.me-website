@@ -29,7 +29,10 @@ const publishedPosts = allPosts
     <MainNav classList="flex md:hidden px-4 md:px-16" />
   </header>
 
-  <div id="show-menu-button" class="flex flex-col items-center p-4 md:hidden">
+  <div
+    id="show-menu-button"
+    class="prose dark:prose-invert mx-auto flex flex-col items-center p-4 md:hidden cursor-pointer"
+  >
     <button>Show posts</button>
   </div>
   <ul
@@ -52,7 +55,7 @@ const publishedPosts = allPosts
   const showMenuButton = document.getElementById("show-menu-button");
   enum MenuText {
     Show = "Show posts menu",
-    Hide = "Hide menu",
+    Hide = "Hide posts menu",
   }
 
   if (showMenuButton) {
