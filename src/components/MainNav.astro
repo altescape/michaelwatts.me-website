@@ -14,19 +14,11 @@ const currentPath = pathname.slice(1);
   <div class="flex-1"></div>
 
   <ul role="navigation" class="flex list-none m-0 p-0">
-    <li
-      class:list={[
-        "font-bold mx-1",
-        currentPath === "" ? "active underline" : null,
-      ]}
-    >
+    <li class:list={["font-bold mx-1", currentPath === "" ? "active" : null]}>
       <MainNavLink href="/" isActive={currentPath === ""}>Home</MainNavLink>
     </li>
     <li
-      class:list={[
-        "font-bold mx-1",
-        currentPath === "about" ? "active underline" : null,
-      ]}
+      class:list={["font-bold mx-1", currentPath === "about" ? "active" : null]}
     >
       <MainNavLink href="/about" isActive={currentPath === "about"}>
         About

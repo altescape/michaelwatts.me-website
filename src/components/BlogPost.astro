@@ -11,9 +11,13 @@ const formattedDate = date
 ---
 
 <li
-  class="flex mb-3 last:border-none flex-row md:flex-col xl:flex-row xl:justify-between items-baseline leading-tight"
+  class="prose dark:prose-invert flex mb-3 flex-row md:flex-col xl:flex-row xl:justify-between items-baseline"
 >
-  <a href={url} class="block w-full hover:underline pr-3">{title}</a>
+  <a
+    href={url}
+    class="block w-full no-underline hover:underline pr-3 leading-tight"
+    >{title}</a
+  >
   <time class="hidden md:inline shrink text-xs text-nowrap xl:pl-5 mt-2 text-sm"
     >{formattedDate}</time
   >

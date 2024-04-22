@@ -17,17 +17,17 @@ const formattedDate = date
   <article class="flex flex-col">
     <div class="flex justify-between items-baseline mb-2">
       <h3
-        class="transition-colors m-0 text-2xl group-hover:text-brand-400 group-hover:underline"
+        class="transition-colors m-0 prose prose-2xl dark:prose-invert group-hover:text-brand-400 group-hover:underline"
       >
         {title}
       </h3>
-      <time
-        class="text-secondary-600 dark:text-secondary-200 text-sm group-hover:dark:text-brand-400"
-      >
+      <time class="prose prose-sm dark:prose-invert group-hover:text-brand-400">
         {formattedDate}
       </time>
     </div>
-    <p class="m-0 text-secondary-700 dark:text-secondary-200">
+    <p
+      class="m-0 prose dark:prose-invert group-hover:text-brand-950 group-hover:dark:text-brand-200"
+    >
       {description}
     </p>
   </article>

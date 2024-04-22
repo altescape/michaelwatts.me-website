@@ -12,10 +12,7 @@ const currentPath = pathname.slice(1);
 const showMainNav = !currentPath.includes("posts");
 ---
 
-<html
-  lang="en"
-  class="bg-brand-50 dark:bg-secondary-900 text-secondary-950 dark:text-rose-50 dark"
->
+<html lang="en" class="dark:bg-zinc-900">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
@@ -35,7 +32,7 @@ const showMainNav = !currentPath.includes("posts");
         <div id="main" role="main" class="min-h-lvh max-w-6xl mt-8">
           <MainNav classList="hidden md:flex px-4 md:px-16" />
 
-          <div class="content px-4 pb-4 md:px-16 md:pb-16 w-full">
+          <div class="px-4 pb-4 md:px-16 md:pb-16 w-full">
             <slot />
           </div>
         </div>

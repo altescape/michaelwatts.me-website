@@ -19,10 +19,10 @@ export default defineConfig({
             dark: "vitesse-dark",
             light: "vitesse-light",
           },
-          onVisitHighlightedLine(node) {
+          onVisitHighlightedLine(node: any) {
             node?.properties?.className?.push("highlighted");
           },
-          onVisitHighlightedChars(node) {
+          onVisitHighlightedChars(node: any) {
             console.log(node);
             node?.properties?.className
               ? node.properties.className.push("highlighted-chars")

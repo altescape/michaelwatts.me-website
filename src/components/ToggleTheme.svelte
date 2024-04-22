@@ -114,8 +114,8 @@
 
 <style>
   :root {
-    --icon-background-color-dark: #081d73;
-    --icon-background-color-light: #44b7e6;
+    --icon-background-color-dark: #242424;
+    --icon-background-color-light: #8b8b8b;
     --icon-color: #f0e68c;
     --icon-color-darker: #ffc72c;
   }
