@@ -8,7 +8,6 @@ export default {
     fontFamily: {
       sans: ["proxima-nova", "sans-serif"],
       serif: ["merriweather", "serif"],
-      header: ["santelia-rough-two", "serif"],
     },
     fontSize: {
       sm: "0.9rem",

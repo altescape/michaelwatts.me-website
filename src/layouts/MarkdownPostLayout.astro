@@ -7,7 +7,9 @@ const { wip } = frontmatter;
 ---
 
 <BaseLayout pageTitle={frontmatter.title} sidebar={true}>
-  <h1>{frontmatter.title}</h1>
+  <h1>
+    {frontmatter.title}
+  </h1>
 
   {wip && <StatusPanel>Work in progress...</StatusPanel>}
 

@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypePrettyCode from "rehype-pretty-code";
+import { transformerNotationDiff } from "@shikijs/transformers";
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,11 +20,11 @@ export default defineConfig({
             dark: "vitesse-dark",
             light: "vitesse-light",
           },
+          transformers: [transformerNotationDiff()],
           onVisitHighlightedLine(node: any) {
             node?.properties?.className?.push("highlighted");
           },
           onVisitHighlightedChars(node: any) {
-            console.log(node);
             node?.properties?.className
               ? node.properties.className.push("highlighted-chars")
               : (node.properties.className = ["highlighted-chars"]);
