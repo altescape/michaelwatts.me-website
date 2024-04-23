@@ -27,12 +27,8 @@
     @apply font-serif;
   }
 
-  .content .notification {
-    @apply p-4 border-l-4;
-  }
-
-  .content .notification.warning {
-    @apply bg-gradient-to-r from-yellow-700 to-transparent border-yellow-400 text-yellow-200;
+  a {
+    @apply hover:text-brand-500 hover:dark:text-brand-400;
   }
 
   .bg-stripes-fuchsia {
