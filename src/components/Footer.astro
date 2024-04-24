@@ -1,21 +1,17 @@
 ---
 const { classList } = Astro.props;
+
+const currentYear = new Date().getFullYear();
 ---
 
-<footer role="contentinfo" class:list={["w-full", classList]}>
-  <div
-    class="container mx-auto border-t border-secondary-200 dark:border-secondary-800 pt-12"
-  >
+<footer
+  role="contentinfo"
+  class:list={["w-full", classList]}
+  class="prose dark:prose-invert"
+>
+  <div>
     <p class="m-0">
-      <strong>Contact me:</strong>
-      <br />
-      More information can be found on <a
-        href="https://www.linkedin.com/in/mwattsweb/"
-        target="_blank">LinkedIn</a
-      > or please contact me by <a
-        href="mailto:hello@michaelwatts.me"
-        target="_blank">email</a
-      >.
+      <strong>© Michael Watts, 2022 - {currentYear}</strong>
     </p>
   </div>
 </footer>

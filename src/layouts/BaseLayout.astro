@@ -12,7 +12,7 @@ const currentPath = pathname.slice(1);
 const showMainNav = !currentPath.includes("posts");
 ---
 
-<html lang="en" class="dark:bg-zinc-900">
+<html lang="en" class="dark:bg-zinc-900 dark">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
@@ -33,12 +33,12 @@ const showMainNav = !currentPath.includes("posts");
           <MainNav classList="hidden md:flex px-4 md:px-16" />
 
           <div
-            class="px-4 pb-4 md:px-16 md:pb-16 w-full prose dark:prose-invert prose-xl sm:prose-lg"
+            class="px-4 pb-4 md:pb-12 prose dark:prose-invert prose-xl sm:prose-lg text-pretty"
           >
             <slot />
           </div>
         </div>
-        <MainFooter classList="p-4 md:p-16 md:pt-0" />
+        <MainFooter classList="px-4 pb-12" />
       </div>
     </section>
     <script>
