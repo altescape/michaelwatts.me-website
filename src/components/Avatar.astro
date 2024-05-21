@@ -1,5 +1,49 @@
 ---
-const title = "Mike's Blog";
+const array1 = [
+  "Whispering",
+  "Electric",
+  "Crimson",
+  "Frozen",
+  "Galactic",
+  "Mystic",
+  "Silent",
+  "Golden",
+  "Invisible",
+];
+const array2 = [
+  "Echoes",
+  "Wanderer",
+  "Phoenix",
+  "Dreams",
+  "Shadows",
+  "Voyage",
+  "Embers",
+  "Harmony",
+  "Twilight",
+];
+const array3 = [
+  "Sanctuary",
+  "Saga",
+  "Realm",
+  "Odyssey",
+  "Whispers",
+  "Eclipse",
+  "Chamber",
+  "Legacy",
+  "Chronicles",
+];
+
+function getRandomWord(array: string[]) {
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+}
+
+const word1 = getRandomWord(array1);
+const word2 = getRandomWord(array2);
+const word3 = getRandomWord(array3);
+
+const combinedWord = word1 + " " + word2 + " " + word3;
+const title = combinedWord;
 ---
 
 <style>
@@ -9,12 +53,14 @@ const title = "Mike's Blog";
   }
 </style>
 
-<a
-  href="/"
-  class="logo before:border-2 before:border-slate-950 dark:before:border-slate-400 flex items-center relative pl-12 text-xl font-bold transition-colors before:w-9 before:h-9 before:rounded-full before:bg-cover before:absolute before:left-0 before:bg-blend-hard-light before:bg-slate-200"
->
-  <span
-    class="prose dark:prose-invert prose-2xl leading-none whitespace-nowrap hidden sm:block"
-    >{title}</span
+<h1>
+  <a
+    href="/"
+    class="logo before:border-2 before:border-slate-950 dark:before:border-slate-400 flex items-center relative pl-12 text-xl font-bold transition-colors before:w-9 before:h-9 before:rounded-full before:bg-cover before:absolute before:left-0 before:bg-blend-hard-light before:bg-slate-200"
   >
-</a>
+    <span
+      class="prose dark:prose-invert prose-2xl leading-none whitespace-nowrap hidden sm:block"
+      >{title}</span
+    >
+  </a>
+</h1>
